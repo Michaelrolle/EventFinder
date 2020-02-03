@@ -12,4 +12,8 @@ export class ZoekComponent implements OnInit {
   ngOnInit() {
   }
 
+  zoek(keyword) {
+    
+  }
+
 }
