@@ -1,0 +1,25 @@
+body, html {
+    height: 100%;
+  }
+  .bg {
+    background-image: url("https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.navbar-expand-sm{
+    background-color: black;
+}
+
+a{
+  color:white;
+}
+
+.btn-warning{
+  background-color: #631D76;
+  color: #FBFBFB;
+  padding-left: 30px;
+  padding-right: 30px;
+}
