@@ -1,4 +1,5 @@
   <!-- Boostrap navbar -->
+
   <nav class="navbar navbar-expand-sm navbar-default justify-content-between mb-0">
     <a class="navbar-brand">Event Finder</a>
 
@@ -7,21 +8,20 @@
     </button>
 
     <div class="navbar-nav">
-      <a routerLink="home" class="nav-item nav-link">Home</a>
+      <a routerLink="zoek" class="nav-item nav-link">Home</a>
       <a routerLink="about" class="nav-item nav-link">About</a>
-      <!-- <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form> -->
+      <a routerLink="artiest" class="nav-item nav-link">Artiest</a>
     </div>
 
     <div>
       <a class="nav-item nav-link"><button routerLink="login" class="btn btn-warning">Login</button></a>
-      <!-- <a routerLink="login" class="nav-item nav-link">Login</a> -->
     </div>
   </nav>
 
   <!-- Router -->
+  
   <div id="router" class="bg mt-0">
+    <div class="container-fluid">
     <router-outlet></router-outlet>
+  </div>
   </div>
