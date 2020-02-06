@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
+import { ConcertService } from '../shared/services/concert.service';
+import { Concert } from '../shared/model/concert.model';
+
 @Component({
   selector: 'app-concert',
   templateUrl: './concert.component.html',
@@ -7,9 +12,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConcertComponent implements OnInit {
 
-  constructor() { }
+  public concert$: Observable<Concert[]>;
+
+  zoekterm: string;
+
+  constructor(private ConcertService: ConcertService) { }
 
   ngOnInit() {
+
+    this.concert$ = this.ConcertService.getConcert(this.zoekterm);
+
+    this.concert$.subscribe( res => console.log(res));
   }
 
 }
