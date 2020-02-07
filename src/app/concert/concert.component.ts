@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
 import { ConcertService } from '../shared/services/concert.service';
 import { Concert } from '../shared/model/concert.model';
+
+import {Routes, RouterModule, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-concert',
@@ -14,15 +16,14 @@ export class ConcertComponent implements OnInit {
 
   public concert$: Observable<Concert[]>;
 
-  zoekterm: string;
+  naam: string = this.route.snapshot.params.naam;
 
-  constructor(private ConcertService: ConcertService) { }
+  constructor(private ConcertService: ConcertService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log(this.naam);
 
-    this.concert$ = this.ConcertService.getConcert(this.zoekterm);
-
-    this.concert$.subscribe( res => console.log(res));
+    /* this.concert$ = this.ConcertService.getConcert(this.naam); */
   }
 
 }

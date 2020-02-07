@@ -13,11 +13,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { Routes, RouterModule} from '@angular/router';
 
+import { ConcertService } from './shared/services/concert.service';
+
+import { FormsModule } from '@angular/forms';
+
 const routes: Routes = [
   {path:"", redirectTo:'zoek', pathMatch:'full'},
-  {path: 'artiest', component: ArtiestComponent},
-  {path: 'concert', component: ConcertComponent},
-  {path: 'lied', component: LiedComponent},
+  {path: 'artiest/:naam', component: ArtiestComponent},
+  {path: 'concert/:naam', component: ConcertComponent},
+  {path: 'lied/:naam', component: LiedComponent},
   {path: 'about', component: AboutComponent},
   {path: 'zoek', component: ZoekComponent},
 ];
@@ -35,9 +39,10 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
-  providers: [],
+  providers: [ConcertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

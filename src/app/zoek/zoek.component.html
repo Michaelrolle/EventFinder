@@ -2,7 +2,8 @@
     <h1 class="display-4" id="titel">ZOEK DE CONCERTEN VAN JE FAVORIETEN ARTIEST</h1>
 
     <div class="active-cyan-3 active-cyan-4" id="SearchBar">
-        <input class="form-control" type="text" placeholder="Artiest naam" aria-label="Search" #artiest>
-        <button class="btn btn-info" (click)="zoek(artiest.value)">Zoek mijn artiest</button>
+        <input class="form-control" type="text" placeholder="Artiest naam" aria-label="Search" [(ngModel)]="artiestnaam">
+        <button class="btn btn-info" [routerLink]="['../concert', artiestnaam]">Zoek mijn artiest</button>
     </div>
-</div>      
+</div>
+

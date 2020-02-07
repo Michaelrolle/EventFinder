@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute, Routes, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-zoek',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ZoekComponent implements OnInit {
   
-  public artiestNaam: string;
+  public zoekTerm: string;
 
-  constructor() { }
+  @Output() zoekEvent = new EventEmitter();
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -17,9 +20,8 @@ export class ZoekComponent implements OnInit {
   zoek(keyword: string) {
     console.log(keyword);
 
-    this.artiestNaam = keyword;
+    this.zoekTerm = keyword;
 
-    
+    this.zoekEvent.emit(this.zoekTerm);
   }
-
 }

@@ -11,7 +11,9 @@ import { Concert } from '../model/concert.model';
 export class ConcertService {
 
   url: string = "https://rest.bandsintown.com/artists/"
-  url2: string = "/events?app_id=203c016053ee323a675c4feb27c83204&date=past";
+  url2: string = "/events?app_id=203c016053ee323a675c4feb27c83204&date=upcoming";
+
+  urlartiest: string = "https://www.theaudiodb.com/api/v1/json/1/search.php?s=";
 
   artiest: string;
 
@@ -25,6 +27,10 @@ export class ConcertService {
     return this.http
       .get<Concert[]>(this.artiest)
       .pipe();
+  }
+
+  getDetails(keyword): Observable<Details[]> {
+    return
   }
 
 }
