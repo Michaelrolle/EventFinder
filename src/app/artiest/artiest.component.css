@@ -1,0 +1,27 @@
+
+.col-sm-5{
+    background-color: rgba(0, 0, 0, 0.651);
+    height: 85vh;
+}
+
+.col-sm-6{
+    background-color: rgba(0, 0, 0, 0.925);
+    /* width: 100%; */
+}
+
+.fas, .fab{
+    color: orange;
+}
+
+.table{
+    margin: auto;
+    width: auto;
+}
+
+td{
+    border: 1px solid gray;
+}
+
+body{
+    background-color: black;
+}

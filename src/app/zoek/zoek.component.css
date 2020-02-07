@@ -5,9 +5,27 @@
     margin: auto;
   width: 50%;
   padding: 10px;
+  
+}
+
+.form-control:focus{
+  border: 2px solid #631D76;
+  box-shadow: none;
 }
 
 #titel {
-    margin-top: 100px;
-    margin-bottom: 50px;
+    /* margin-top: 100px; */
+    padding-top: 10%;
+
+    color: white;
 }
+
+.btn-warning{
+  background-color: #631D76;
+  color: #FBFBFB;
+}
+
+.display-4{
+  font-weight: 600;
+}
+
