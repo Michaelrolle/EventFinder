@@ -36,7 +36,7 @@ export class ConcertService {
 
     return this.http
       .get<Detail[]>(this.detailurl)
-      .pipe();
+      .pipe(map(res => res['artists']));
   }
 
 }
