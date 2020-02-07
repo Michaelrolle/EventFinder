@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, tap, findIndex } from 'rxjs/Operators';
 
 import { Concert } from '../model/concert.model';
+import { Detail } from '../model/detail.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class ConcertService {
   urlartiest: string = "https://www.theaudiodb.com/api/v1/json/1/search.php?s=";
 
   artiest: string;
+  detailurl: string;
 
   constructor(private http: HttpClient) {}
 
@@ -29,8 +31,12 @@ export class ConcertService {
       .pipe();
   }
 
-  getDetails(keyword): Observable<Details[]> {
-    return
+  getDetails(keyword): Observable<Detail[]> {
+    this.detailurl = this.urlartiest + keyword ;
+
+    return this.http
+      .get<Detail[]>(this.detailurl)
+      .pipe();
   }
 
 }

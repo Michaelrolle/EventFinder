@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { ConcertService } from '../shared/services/concert.service';
 import { Concert } from '../shared/model/concert.model';
+import { Detail } from '../shared/model/detail.model';
 
 import {Routes, RouterModule, ActivatedRoute} from '@angular/router';
 
@@ -15,6 +16,7 @@ import {Routes, RouterModule, ActivatedRoute} from '@angular/router';
 export class ConcertComponent implements OnInit {
 
   public concert$: Observable<Concert[]>;
+  public detail$: Observable<Detail[]>;
 
   naam: string = this.route.snapshot.params.naam;
 
@@ -23,7 +25,8 @@ export class ConcertComponent implements OnInit {
   ngOnInit() {
     console.log(this.naam);
 
-    /* this.concert$ = this.ConcertService.getConcert(this.naam); */
+    this.concert$ = this.ConcertService.getConcert(this.naam);
+    this.detail$ = this.ConcertService.getDetails(this.naam);
   }
 
 }
