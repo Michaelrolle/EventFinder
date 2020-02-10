@@ -7,6 +7,7 @@ import { Concert } from '../shared/model/concert.model';
 import { Venue } from '../shared/model/venue.model';
 
 import {Routes, RouterModule, ActivatedRoute} from '@angular/router';
+import { AuthService } from '../shared/services/auth/auth.service.service';
 
 @Component({
   selector: 'app-concert',
@@ -16,7 +17,6 @@ import {Routes, RouterModule, ActivatedRoute} from '@angular/router';
 export class ConcertComponent implements OnInit {
 
   public concert$: Observable<Concert[]>;
-  public offers$: Observable<any[]>;
 
   typeTickets: string = "Tickets";
   SoldOut: string = "Sold Out";
@@ -29,16 +29,17 @@ export class ConcertComponent implements OnInit {
 
   flag: string = " flag";
 
-  constructor(private ConcertService: ConcertService, private route: ActivatedRoute) { }
+  constructor(
+    private ConcertService: ConcertService, 
+    private route: ActivatedRoute,
+    private authService: AuthService
+    ) { }
 
   ngOnInit() {
     console.log(this.naam);
 
     this.concert$ = this.ConcertService.getConcert(this.naam);
     this.concert$.subscribe(res => console.log(res));
-
-    this.offers$ = this.ConcertService.getConcertOffers(this.naam);
-    this.offers$.subscribe(res => console.log(res));
   }
 
   onClick(link: string) {
