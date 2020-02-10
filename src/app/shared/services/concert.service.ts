@@ -5,6 +5,7 @@ import { map, tap, findIndex } from 'rxjs/Operators';
 
 import { Concert } from '../model/concert.model';
 import { Detail } from '../model/detail.model';
+import { Venue } from '../model/venue.model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,17 @@ export class ConcertService {
       .get<Concert[]>(this.artiest)
       .pipe();
   }
+
+  // Venue gegevens ophalen
+  getConcertOffers(keyword): Observable<any[]> {
+    this.artiest = this.url + keyword + this.url2;
+
+    console.log(this.artiest);
+
+    return this.http
+      .get<any[]>(this.artiest)
+      .pipe(map(res => res[0]['offers']));
+  } 
 
   getDetails(keyword): Observable<Detail[]> {
     this.detailurl = this.urlartiest + keyword ;

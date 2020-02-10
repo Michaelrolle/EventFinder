@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { ConcertService } from '../shared/services/concert.service';
 import { Concert } from '../shared/model/concert.model';
-import { Detail } from '../shared/model/detail.model';
+import { Venue } from '../shared/model/venue.model';
 
 import {Routes, RouterModule, ActivatedRoute} from '@angular/router';
 
@@ -16,9 +16,13 @@ import {Routes, RouterModule, ActivatedRoute} from '@angular/router';
 export class ConcertComponent implements OnInit {
 
   public concert$: Observable<Concert[]>;
-  public detail$: Observable<Detail[]>;
+  public offers$: Observable<any[]>;
+
+  statusAvailable: string = "available";
 
   naam: string = this.route.snapshot.params.naam;
+
+  flag: string = " flag";
 
   constructor(private ConcertService: ConcertService, private route: ActivatedRoute) { }
 
@@ -26,7 +30,14 @@ export class ConcertComponent implements OnInit {
     console.log(this.naam);
 
     this.concert$ = this.ConcertService.getConcert(this.naam);
-    this.detail$ = this.ConcertService.getDetails(this.naam);
+    this.concert$.subscribe(res => console.log(res));
+
+    this.offers$ = this.ConcertService.getConcertOffers(this.naam);
+    this.offers$.subscribe(res => console.log(res));
   }
 
+  onClick(link: string) {
+    console.log(link);
+    window.open(link);
+  }
 }
