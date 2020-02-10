@@ -18,7 +18,12 @@ export class ConcertComponent implements OnInit {
   public concert$: Observable<Concert[]>;
   public offers$: Observable<any[]>;
 
+  typeTickets: string = "Tickets";
+  SoldOut: string = "Sold Out";
   statusAvailable: string = "available";
+
+  cardLink: string = "https://dummyimage.com/100x100/FFA500/000000.png&text=";
+  cardText: string = "+";
 
   naam: string = this.route.snapshot.params.naam;
 
