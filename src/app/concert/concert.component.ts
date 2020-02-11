@@ -21,8 +21,8 @@ export class ConcertComponent implements OnInit {
   typeTickets: string = "Tickets";
   SoldOut: string = "Sold Out";
   statusAvailable: string = "available";
-
-  cardLink: string = "https://dummyimage.com/100x100/FFA500/000000.png&text=";
+  
+  cardLink: string = "https://dummyimage.com/300x300/ff9900/ffffff.png&text=";
   cardText: string = "+";
 
   naam: string = this.route.snapshot.params.naam;
