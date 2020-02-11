@@ -3,6 +3,15 @@
     height: 600px;
 }
 
-#concertenbalk {
-    border: 2px solid white;
+
+.card{
+    border:none;
+}
+
+.card-header{
+    background-color: rgb(32, 30, 30);
+}
+
+img{
+    border: 2px solid purple;
 }
