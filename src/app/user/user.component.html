@@ -7,7 +7,8 @@
         <div *ngFor="let fav of favorieten$ | async">
             <div *ngIf="fav.accountName == authService.user.email">
                 {{fav.accountName}}<br/>
-                {{fav.artist}}
+                {{fav.artist}} <br/>
+                <button (click)="removeFavieJSON(fav.id)">Remove artist from favorites</button>
             </div>
         </div>
         <div class="col-sm-6 mt-3 ml-3">
