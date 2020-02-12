@@ -1,6 +1,6 @@
 .concerts{
     overflow-y: scroll;
-    max-height: 600px;
+    max-height: 80vh;
 }
 
 
@@ -14,4 +14,8 @@
 
 img{
     border: 2px solid purple;
+}
+
+.btn-success{
+    background-color: purple;
 }
