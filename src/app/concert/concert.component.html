@@ -21,7 +21,7 @@
         Start time: <b>{{concert.datetime | date:'H:mm'}}u</b>
       </p>
 
-      <div>
+      <div >
         <!-- Deze button toont als tickets beschikbaar zijn -->
         <button class="btn btn-success" (click)="onClick(concert.offers[0].url)"
           *ngIf="concert.offers[0].type == typeTickets">

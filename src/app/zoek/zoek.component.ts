@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Routes, RouterModule } from '@angular/router';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-zoek',
@@ -22,6 +23,13 @@ export class ZoekComponent implements OnInit {
 
     this.zoekTerm = keyword;
 
-    this.zoekEvent.emit(this.zoekTerm);
+    if (this.zoekTerm == "") {
+      
+    }
+    else {
+      this.zoekTerm = encodeURIComponent(this.zoekTerm);
+
+      this.zoekEvent.emit(this.zoekTerm);
+    }
   }
 }

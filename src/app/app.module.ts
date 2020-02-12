@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
+import { ErrorPaginaComponent } from './error-pagina/error-pagina.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,13 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
   { path: 'zoek', component: ZoekComponent },
+
+  /* Stuurt mensen automatisch naar de zoek pagina als ze geen naam ingeven vanboven */
+  { path: 'artiest', component: ZoekComponent },
+  { path: 'concert', component: ZoekComponent },
+
+  /* Dit zorgt er voor dat mensen geen foutieve links kunnen invoegen / aanpasssen in de url vanboven */
+  { path: '**', component: ErrorPaginaComponent},
 ];
 
 const config = {
@@ -49,7 +57,8 @@ const config = {
     LiedComponent,
     AboutComponent,
     ZoekComponent,
-    LoginComponent
+    LoginComponent,
+    ErrorPaginaComponent
   ],
   imports: [
     BrowserModule,

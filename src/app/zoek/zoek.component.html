@@ -4,7 +4,8 @@
     <div class="active-cyan-3 active-cyan-4" id="SearchBar">
         <input class="form-control mb-3" type="text" placeholder="Search" aria-label="Search" 
         [(ngModel)]="artiestnaam">
-        <button class="btn btn-warning mr-5" [routerLink]="['../artiest', artiestnaam]">Zoek mijn artiest</button>
+        <button class="btn btn-warning mr-5" (click)="zoek(artiestnaam)" [routerLink]="['../artiest', artiestnaam]">
+            Zoek mijn artiest
+        </button>
     </div>
 </div>
-
