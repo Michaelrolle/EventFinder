@@ -17,10 +17,16 @@ export class UserComponent implements OnInit {
 
   constructor(private concertService: ConcertService, 
     private route: ActivatedRoute,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    public router: Router) { }
 
   ngOnInit() {
-    this.favorieten$ = this.concertService.getFavie();
+    if (!this.authService.isLoggedIn) {
+      {this.router.navigate(['../login'])}
+    }
+    else {
+      this.favorieten$ = this.concertService.getFavie();
+    }
   }
 
   removeFavieJSON(value: number) {       
