@@ -1,0 +1,14 @@
+{
+  "favorieten": [
+    {
+      "id": 1,
+      "accountName": "matty.fieten@telenet.be",
+      "artist": "Editors"
+    },
+    {
+      "id": 2,
+      "accountName": "Testing",
+      "artist": "I'm gonna be the very test"
+    }
+  ]
+}

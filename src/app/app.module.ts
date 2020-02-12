@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { ErrorPaginaComponent } from './error-pagina/error-pagina.component';
+import { UserComponent } from './user/user.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
   { path: 'zoek', component: ZoekComponent },
+  { path: 'user', component: UserComponent },
 
   /* Stuurt mensen automatisch naar de zoek pagina als ze geen naam ingeven vanboven */
   { path: 'artiest', component: ZoekComponent },
@@ -58,7 +60,8 @@ const config = {
     AboutComponent,
     ZoekComponent,
     LoginComponent,
-    ErrorPaginaComponent
+    ErrorPaginaComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

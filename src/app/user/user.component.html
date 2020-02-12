@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="row text-white">
+        <div class="col-sm-5 mt-3 ml-3">
+            <div class="h3 text-center mt-3 text-center display-2 pb-4"></div>
+            <div class="row p-3"></div>
+        </div> 
+        <div *ngFor="let fav of favorieten$ | async">
+            <div *ngIf="fav.accountName == authService.user.email">
+                {{fav.accountName}}<br/>
+                {{fav.artist}}
+            </div>
+        </div>
+        <div class="col-sm-6 mt-3 ml-3">
+            <app-concert></app-concert>
+        </div>
+    </div>
+</div>
+
