@@ -9,6 +9,11 @@
       "id": 2,
       "accountName": "Testing",
       "artist": "I'm gonna be the very test"
+    },
+    {
+      "id": 4,
+      "accountName": "matty.fieten@telenet.be",
+      "artist": "Ed Sheeran"
     }
   ]
 }
