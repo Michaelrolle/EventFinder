@@ -14,6 +14,12 @@
       "id": 4,
       "accountName": "matty.fieten@telenet.be",
       "artist": "Ed Sheeran"
+    },
+    {
+      "id": 5,
+      "accountName": "matty.fieten@telenet.be",
+      "artist": "Editors",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/editors-4fd26ee4bd8e2.jpg"
     }
   ]
 }

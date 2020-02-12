@@ -3,5 +3,6 @@ export class Favoriet {
         public id: void,
         public accountName: string,
         public artist: string,
+        public image: string
     ) {}
 }

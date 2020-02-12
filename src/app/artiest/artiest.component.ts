@@ -22,8 +22,8 @@ export class ArtiestComponent implements OnInit {
     private route: ActivatedRoute,
     private authService: AuthService) { }
 
-  addFavie(user: string, artist: string) {
-    const newFavieJSON = new Favoriet(null, user, artist);
+  addFavie(user: string, artist: string, image: string) {
+    const newFavieJSON = new Favoriet(null, user, artist, image);
     this.concertService.addFavieJSON(newFavieJSON)
       .subscribe((addedFavie) => {
         this.favorieten$ = this.concertService.getFavie();
