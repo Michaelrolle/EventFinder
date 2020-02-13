@@ -17,7 +17,7 @@ export class Detail {
         //Biography (in het engels) van de artiest
         public strBiographyEN: string,
         //aantal leden als het een band is
-        public intMemmbers: string,
+        public intMembers: string,
         //van welke land de band is
         public strCountry: string,
         //thumbnail van de artiest

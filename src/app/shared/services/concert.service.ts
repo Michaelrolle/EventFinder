@@ -5,7 +5,6 @@ import { map, tap, findIndex } from 'rxjs/Operators';
 
 import { Concert } from '../model/concert.model';
 import { Detail } from '../model/detail.model';
-import { Venue } from '../model/venue.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +16,8 @@ export class ConcertService {
 
   urlartiest: string = "https://www.theaudiodb.com/api/v1/json/1/search.php?s=";
 
+  urlfavorieten: string = "http://localhost:3000/favorieten";
+
   artiest: string;
   detailurl: string;
 
@@ -25,7 +26,7 @@ export class ConcertService {
   getConcert(keyword): Observable<Concert[]> {
     this.artiest = this.url + keyword + this.url2;
 
-    console.log(this.artiest);
+    /* console.log(this.artiest); */
 
     return this.http
       .get<Concert[]>(this.artiest)
@@ -36,7 +37,7 @@ export class ConcertService {
   getConcertOffers(keyword): Observable<any[]> {
     this.artiest = this.url + keyword + this.url2;
 
-    console.log(this.artiest);
+    /* console.log(this.artiest); */
 
     return this.http
       .get<any[]>(this.artiest)
@@ -49,6 +50,26 @@ export class ConcertService {
     return this.http
       .get<Detail[]>(this.detailurl)
       .pipe(map(res => res['artists']));
+  }
+
+  addFavieJSON(value): Observable<any> {
+    const headers = new HttpHeaders().set("Content-type", "application/json");
+    return this.http.post(this.urlfavorieten, value);
+  }
+
+  getFavie(): Observable<any[]> {
+    return this.http
+      .get<any[]>(this.urlfavorieten)
+      .pipe(tap(result => console.log("via json-server: ", result)));
+  }
+
+  removeFavie(value: number) {
+
+    const url2 = `${this.urlfavorieten}/${+value}`;
+
+    /* console.log(value, url2); */
+
+    return this.http.delete(url2).pipe();
   }
 
 }
