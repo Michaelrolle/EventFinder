@@ -24,3 +24,15 @@ a{
 nav{
   border-bottom: 2px solid orange;
 }
+
+a:hover {
+  color: orange;
+}
+
+#logo {
+  width: 12%
+}
+
+.middlelinks {
+  font-size: 20px;
+}

@@ -1,32 +1,36 @@
 <div class="container-fluid">
+
     <div class="row text-white" *ngIf="(detail$ | async) as detail">
-        <div class="col-sm-5 mt-3 ml-3">
+        <div class="col-sm-5 mt-3 ml-3"> 
             <div class="h3 text-center mt-3 text-center display-2 pb-4">{{detail[0].strArtist}}</div>
             <div class="row p-3">
-                <img class="rounded-circle mx-auto d-block" [attr.src]="detail[0].strArtistThumb"
-                    height="200px" width="200px" alt="artist">
-                </div>
-                <div class="display inline-block m-2 p-3 text-center">
-                    <a [attr.href]="detail[0].strTwitter" target="_blank"><i class="fab fa-twitter m-1 fa-lg" ></i></a>
-                    <a [attr.href]="detail[0].strFacebook" target="_blank"><i class="fab fa-facebook m-1 fa-lg"></i></a>
-                    <a [attr.href]="detail[0].strWebsite" target="_blank"><i class="fas fa-globe m-1 fa-lg"></i></a>
-                    <a [attr.href]="detail[0].strLastFMChart" target="_blank"><i class="fab fa-lastfm-square fa-lg m-1"></i></a>     
-                </div>
-            <div class="row p-3 text-center text-white d-block">
-                    
-                      <p><span class="font-weight-bold">FORMATION:</span> {{detail[0].intFormedYear}}</p>
-                      <p><span class="font-weight-bold">GENRE:</span> {{detail[0].strGenre}}</p>
-                      <p><span class="font-weight-bold">ORIGIN:</span> {{detail[0].strCountry}}</p>  
+                <img class="rounded-circle mx-auto d-block" [attr.src]="detail[0].strArtistThumb" height="200px"
+                    width="200px" alt="artist">
             </div>
-            <button type="button" class="btn btn-warning btn-lg btn-block text-white"
-            *ngIf="authService.isLoggedIn"
-            (click)="addFavie(authService.user.email,detail[0].strArtist,detail[0].strArtistThumb)"
-            routerLink="../../user">
-                Add to favorites
-            </button>
-        </div> 
+            <div class="display inline-block m-2 p-3 text-center">
+                <a [attr.href]="detail[0].strTwitter" target="_blank"><i class="fab fa-twitter m-1 fa-lg"></i></a>
+                <a [attr.href]="detail[0].strFacebook" target="_blank"><i class="fab fa-facebook m-1 fa-lg"></i></a>
+                <a [attr.href]="detail[0].strWebsite" target="_blank"><i class="fas fa-globe m-1 fa-lg"></i></a>
+                <a [attr.href]="detail[0].strLastFMChart" target="_blank"><i
+                        class="fab fa-lastfm-square fa-lg m-1"></i></a>
+            </div>
+            <div class="row p-3 text-center text-white d-block">
+
+                <p><span class="font-weight-bold">FORMATION:</span> {{detail[0].intFormedYear}}</p>
+                <p><span class="font-weight-bold">GENRE:</span> {{detail[0].strGenre}}</p>
+                <p><span class="font-weight-bold">ORIGIN:</span> {{detail[0].strCountry}}</p>
+            </div>
+            <div *ngIf="authService.isLoggedIn">
+                <button type="button" class="btn btn-warning btn-lg btn-block text-white" 
+                    (click)="addFavie(authService.user.email,detail[0].strArtist,detail[0].strArtistThumb)"
+                    routerLink="../../user">
+                    Add to favorites
+                </button>
+            </div>
+
+        </div>
         <!-- <p>{{detail[0].strBiographyEN}}.</p> -->
-        
+
         <div class="col-sm-6 mt-3 ml-3">
             <app-concert></app-concert>
         </div>

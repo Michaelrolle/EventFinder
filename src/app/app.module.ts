@@ -23,7 +23,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { ErrorPaginaComponent } from './error-pagina/error-pagina.component';
 import { UserComponent } from './user/user.component';
 
-
+/* De routes */
 const routes: Routes = [
   { path: "", redirectTo: 'zoek', pathMatch: 'full' },
   { path: 'artiest/:naam', component: ArtiestComponent },
@@ -41,6 +41,7 @@ const routes: Routes = [
   { path: '**', component: ErrorPaginaComponent},
 ];
 
+/* Config voor Firebase */
 const config = {
   apiKey: "AIzaSyAzzjvY0j7ed6UP4lOeQXPPms1FAhz7Vjw",
   authDomain: "eventfinder-1e761.firebaseapp.com",

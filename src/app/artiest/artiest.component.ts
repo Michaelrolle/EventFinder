@@ -5,6 +5,8 @@ import { Detail } from '../shared/model/detail.model';
 import { Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { Favoriet } from '../shared/model/favoriet.model';
 import { AuthService } from '../shared/services/auth/auth.service.service';
+import { stringify } from 'querystring';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-artiest',
@@ -13,15 +15,24 @@ import { AuthService } from '../shared/services/auth/auth.service.service';
 })
 export class ArtiestComponent implements OnInit {
 
+  /* Observable voor details */
   public detail$: Observable<Detail[]>
-  public favorieten$: Observable<any[]>;
 
+  /* Observable voor favorieten */
+  public favorieten$: Observable<any[]>;
+  public fav$: Observable<any>;
+
+  /* Naam krijgen via dynamic routing */
   naam: string = this.route.snapshot.params.naam;
+
+  
 
   constructor(private concertService: ConcertService, 
     private route: ActivatedRoute,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private http: HttpClient) { }
 
+  /* Artiest toevoegen aan favoriet met user email, artiest naam en artiest image */
   addFavie(user: string, artist: string, image: string) {
     const newFavieJSON = new Favoriet(null, user, artist, image);
     this.concertService.addFavieJSON(newFavieJSON)
@@ -31,9 +42,17 @@ export class ArtiestComponent implements OnInit {
   }
 
   ngOnInit() {
-    // console.log(this.naam)
+    /* console.log(this.naam) */
+
+    /* Details ophalen */
     this.detail$ = this.concertService.getDetails(this.naam);
-    this.detail$.subscribe(res => console.log(res[0]));
+    /* this.detail$.subscribe(res => console.log(res[0])); */
+
+    this.favorieten$ = this.concertService.getFavie();
+  }
+
+  checkup(favorieten$) {
+    
   }
 
 }

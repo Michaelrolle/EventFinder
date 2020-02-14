@@ -5,7 +5,7 @@
                 <div class="card-header">Login</div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-4 text-center">
+                        <div class="col-md-4 d-flex align-items-center justify-content-center text-center">
                             <img src="https://placeimg.com/128/128/nature">
                         </div>
                         <div class="col-md-8">
@@ -13,13 +13,8 @@
                                 autofocus>
                             <input type="password" class="form-control mb-2" placeholder="Password" #userPassword
                                 required>
-                            <button class="btn btn-lg btn-primary btn-block mb-1"
-                                (click)="authService.login(userEmail.value, userPassword.value)">Login</button>
-                        </div>
-                    </div>
-                    <br/>
-                    <div class="row">
-                        <div class="col-md-12">
+                            <button class="btn btn-lg btn-primary btn-block mb-1 emailbutton mt-4"
+                                (click)="authService.login(userEmail.value, userPassword.value)">Login with e-mail</button>
                             <button class="btn btn-lg btn-danger btn-block mb-1"
                                 (click)="authService.doGoogleLogin()">Login with Google</button>
                         </div>

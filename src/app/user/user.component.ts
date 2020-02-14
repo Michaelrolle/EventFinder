@@ -14,14 +14,17 @@ import { Concert } from '../shared/model/concert.model';
 })
 export class UserComponent implements OnInit {
 
+  /* Observable van favorieten */
   public favorieten$: Observable<Favoriet[]>;
 
+  /* Observable van concerten */
   public concert$: Observable<Concert[]>;
 
+  /* Variabelen voor te checken van tickets */
   typeTickets: string = "Tickets";
   SoldOut: string = "Sold Out";
-  statusAvailable: string = "available";
 
+  /* Image generaten voor datum */
   cardLink: string = "https://dummyimage.com/100x100/FFA500/000000.png&text=";
   cardText: string = "+";
 
@@ -48,6 +51,7 @@ export class UserComponent implements OnInit {
     this.concertService.removeFavie(value).subscribe(res => console.log)
   }
 
+  /* Functie voor concert op te roepen van opgeslagen artiesten */
   getConcert(value: string) {
     this.concert$ = this.concertService.getConcert(value);
   }

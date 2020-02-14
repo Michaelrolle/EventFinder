@@ -1,0 +1,13 @@
+.card-header {
+    background-color: rgba(0, 0, 0, 0.925);
+    color: orange;
+}
+
+.card-body {
+    background-color: rgba(0, 0, 0, 0.80);
+}
+
+.emailbutton {
+    background-color: orange;
+    color: black;
+}
