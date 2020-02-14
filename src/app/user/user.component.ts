@@ -22,15 +22,15 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
     /* Comment dit uit als ge layout wilt aanpassen */
-    if (!this.authService.isLoggedIn) {
-      {this.router.navigate(['../login'])}
-    }
-    else {
-      this.favorieten$ = this.concertService.getFavie();
-    }
+    // if (!this.authService.isLoggedIn) {
+    //   {this.router.navigate(['../login'])}
+    // }
+    // else {
+    //   this.favorieten$ = this.concertService.getFavie();
+    // }
 
-    /* un-comment dit als ge de layout aant aanpassen zijt */
-    /* this.favorieten$ = this.concertService.getFavie(); */
+    // un-comment dit als ge de layout aant aanpassen zijt
+    this.favorieten$ = this.concertService.getFavie();
   }
 
   removeFavieJSON(value: number) {       

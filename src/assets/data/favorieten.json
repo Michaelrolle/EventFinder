@@ -1,31 +1,46 @@
 {
   "favorieten": [
     {
-      "id": 1,
-      "accountName": "matty.fieten@telenet.be",
-      "artist": "Editors"
+      "id": 6,
+      "accountName": "admin@eventfinder.be",
+      "artist": "Sam Fender",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/syrtpq1565218848.jpg"
     },
     {
-      "id": 2,
-      "accountName": "Testing",
-      "artist": "I'm gonna be the very test"
+      "id": 7,
+      "accountName": "admin@eventfinder.be",
+      "artist": "Muse",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/ywtwsq1357992851.jpg"
     },
     {
-      "id": 4,
-      "accountName": "matty.fieten@telenet.be",
-      "artist": "Ed Sheeran"
-    },
-    {
-      "id": 5,
-      "accountName": "matty.fieten@telenet.be",
-      "artist": "Editors",
-      "image": "https://www.theaudiodb.com/images/media/artist/thumb/editors-4fd26ee4bd8e2.jpg"
-    }
-    {
-      "id": 5,
+      "id": 8,
       "accountName": "admin@eventfinder.be",
       "artist": "Editors",
       "image": "https://www.theaudiodb.com/images/media/artist/thumb/editors-4fd26ee4bd8e2.jpg"
+    },
+    {
+      "id": 9,
+      "accountName": "admin@eventfinder.be",
+      "artist": "Foals",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/foals-4fe32ccda0d41.jpg"
+    },
+    {
+      "id": 10,
+      "accountName": "admin@eventfinder.be",
+      "artist": "Queens of the Stone Age",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/yptrrv1387488140.jpg"
+    },
+    {
+      "id": 11,
+      "accountName": "admin@eventfinder.be",
+      "artist": "Foo Fighters",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/vuvqxr1352453964.jpg"
+    },
+    {
+      "id": 12,
+      "accountName": "admin@eventfinder.be",
+      "artist": "The Strokes",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/xpuvwy1477576306.jpg"
     }
   ]
 }
