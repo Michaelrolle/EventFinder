@@ -28,8 +28,6 @@ export class UserComponent implements OnInit {
   cardLink: string = "https://dummyimage.com/100x100/FFA500/000000.png&text=";
   cardText: string = "+";
 
-  naam: string = this.route.snapshot.params.naam;
-
   constructor(private concertService: ConcertService, 
     private route: ActivatedRoute,
     private authService: AuthService,
