@@ -1,19 +1,28 @@
 <div class="container-fluid">
-    <div class="row text-white">
-        <div class="col-sm-5 mt-3 ml-3">
-            <div *ngFor="let fav of favorieten$ | async">
-            <!-- <div *ngIf="fav.accountName == authService.user.email"> -->
-                <!-- {{fav.accountName}}<br/> -->
-                {{fav.artist}} <br/>
-                <img class="rounded-circle" [src]="fav.image" width="12%" height="12%"> <br/>
-                <button class="btn btn-success" (click)="removeFavieJSON(fav.id)">Remove artist from favorites</button>
+    <div class="row">
+        <div class="col-sm-4 mt-3 ml-3">
+            <div *ngFor="let fav of favorieten$ | async" class="mt-2 text-white">
+                <div class="card">
+                    <div class="row ">
+                        <div class="col-md-3 mx-auto d-block">
+                            <img [src]="fav.image" class="w-75">
+                        </div>
+                        <div class="col-md-8 p-0">
+
+                            <h4 class="card-title">{{fav.artist}}</h4>
+                            <button class="btn btn-lg btn-success d-inline mr-1 mb-1" (click)="getConcert(fav.artist)" [routerLink]="['../concert', (fav.artist)]">Show concerts</button>
+                            <button class=" btn btn-lg btn-warning d-inline text-white mb-1 " (click)="removeFavieJSON(fav.id) ">Remove</button>
+
+                        </div>
+
+                    </div>
+                </div>
             </div>
+            <!-- <div *ngIf="fav.accountName==a uthService.user.email "> -->
+            <!-- {{fav.accountName}}<br/> -->
         </div>
-        </div> 
-        
-        <div class="col-sm-6 mt-3 ml-3">
+        <div class="col-sm-7 mt-3 ml-3 ">
             <app-concert></app-concert>
         </div>
     </div>
-<!-- </div> -->
-
+</div>
