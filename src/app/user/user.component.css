@@ -1,29 +1,35 @@
-.col-sm-4 {
-    background-color: rgba(0, 0, 0, 0.651);
-    height: 85vh;
-    overflow: auto;
-}
-
-.col-sm-7 {
-    background-color: rgba(0, 0, 0, 0.925);
-    /* width: 100%; */
-    height: 85vh;
-}
-
-.fas,
-.fab {
-    color: orange;
-}
-
-body {
-    background-color: black;
-}
-
-.card {
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.btn-success {
-    background-color: purple;
-    border-color: yellow;
-}
+    .col-sm-4 {
+        background-color: rgba(0, 0, 0, 0.651);
+        height: 85vh;
+        overflow: auto;
+    }
+    
+    .col-sm-7 {
+        background-color: rgba(0, 0, 0, 0.925);
+        /* width: 100%; */
+        height: 85vh;
+        color: white;
+        overflow: auto;
+    }
+    
+    .fas,
+    .fab {
+        color: orange;
+    }
+    
+    body {
+        background-color: black;
+    }
+    
+    .card {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    
+    .btn-success {
+        background-color: purple;
+        border-color: yellow;
+    }
+    
+    .btn-success:active {
+        outline: none;
+    }

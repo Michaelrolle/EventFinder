@@ -28,6 +28,8 @@ export class UserComponent implements OnInit {
   cardLink: string = "https://dummyimage.com/100x100/FFA500/000000.png&text=";
   cardText: string = "+";
 
+  showConcerts: boolean = true;
+
   constructor(private concertService: ConcertService, 
     private route: ActivatedRoute,
     private authService: AuthService,
@@ -53,7 +55,13 @@ export class UserComponent implements OnInit {
 
   /* Functie voor concert op te roepen van opgeslagen artiesten */
   getConcert(value: string) {
-    this.concert$ = this.concertService.getConcert(value);
+    if (this.showConcerts){
+      this.concert$ = this.concertService.getConcert(value);
+    } else{
+      this.showConcerts = !this.showConcerts;
+    }
+      
+      
     console.log(value);
   }
 

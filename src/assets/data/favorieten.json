@@ -1,12 +1,6 @@
 {
   "favorieten": [
     {
-      "id": 6,
-      "accountName": "admin@eventfinder.be",
-      "artist": "Sam Fender",
-      "image": "https://www.theaudiodb.com/images/media/artist/thumb/syrtpq1565218848.jpg"
-    },
-    {
       "id": 7,
       "accountName": "admin@eventfinder.be",
       "artist": "Muse",
@@ -41,6 +35,12 @@
       "accountName": "admin@eventfinder.be",
       "artist": "The Strokes",
       "image": "https://www.theaudiodb.com/images/media/artist/thumb/xpuvwy1477576306.jpg"
+    },
+    {
+      "id": 13,
+      "accountName": "admin@eventfinder.be",
+      "artist": "Sam Fender",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/syrtpq1565218848.jpg"
     }
   ]
 }
