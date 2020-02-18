@@ -20,12 +20,11 @@ export class ArtiestComponent implements OnInit {
 
   /* Observable voor favorieten */
   public favorieten$: Observable<any[]>;
-  public fav$: Observable<any>;
 
   /* Naam krijgen via dynamic routing */
-  naam: string = this.route.snapshot.params.naam;
+  naam: string = this.route.snapshot.params.naam;  
 
-  
+  webLink: string = "https://"
 
   constructor(private concertService: ConcertService, 
     private route: ActivatedRoute,
@@ -47,12 +46,5 @@ export class ArtiestComponent implements OnInit {
     /* Details ophalen */
     this.detail$ = this.concertService.getDetails(this.naam);
     /* this.detail$.subscribe(res => console.log(res[0])); */
-
-    this.favorieten$ = this.concertService.getFavie();
   }
-
-  checkup(favorieten$) {
-    
-  }
-
 }

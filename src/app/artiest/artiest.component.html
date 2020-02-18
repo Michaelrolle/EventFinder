@@ -1,5 +1,4 @@
 <div class="container-fluid">
-
     <div class="row text-white" *ngIf="(detail$ | async) as detail">
         <div class="col-sm-5 mt-3 ml-3"> 
             <div class="h3 text-center mt-3 text-center display-2 pb-4">{{detail[0].strArtist}}</div>
@@ -8,10 +7,10 @@
                     width="200px" alt="artist">
             </div>
             <div class="display inline-block m-2 p-3 text-center">
-                <a [attr.href]="detail[0].strTwitter" target="_blank"><i class="fab fa-twitter m-1 fa-lg"></i></a>
-                <a [attr.href]="detail[0].strFacebook" target="_blank"><i class="fab fa-facebook m-1 fa-lg"></i></a>
-                <a [attr.href]="detail[0].strWebsite" target="_blank"><i class="fas fa-globe m-1 fa-lg"></i></a>
-                <a [attr.href]="detail[0].strLastFMChart" target="_blank"><i
+                <a [attr.href]="webLink + detail[0].strTwitter" target="_blank"><i class="fab fa-twitter m-1 fa-lg"></i></a>
+                <a [attr.href]="webLink + detail[0].strFacebook" target="_blank"><i class="fab fa-facebook m-1 fa-lg"></i></a>
+                <a [attr.href]="webLink + detail[0].strWebsite" target="_blank"><i class="fas fa-globe m-1 fa-lg"></i></a>
+                <a *ngIf="detail[0].strLastFMChart != null" [attr.href]="webLink + detail[0].strLastFMChart" target="_blank" ><i
                         class="fab fa-lastfm-square fa-lg m-1"></i></a>
             </div>
             <div class="row p-3 text-center text-white d-block">
