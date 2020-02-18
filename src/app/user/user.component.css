@@ -26,14 +26,11 @@
         color: #ffffff !important;
     }
     
-    .btn-success {
+    .btn-danger {
         background-color: purple;
         border-color: yellow;
     }
     
-    .btn-success:active {
-        outline: none;
-    }
 
     .card-text, .card-title{
         color:white;

@@ -10,7 +10,7 @@
                         <div class="col-md-8 p-0">
 
                             <h4 class="card-title">{{fav.artist}}</h4>
-                            <button class="btn btn-lg btn-success d-inline mr-1 mb-1" (click)="getConcert(fav.artist)">Show concerts</button>
+                            <button class="btn btn-lg btn-danger d-inline mr-1 mb-1" (click)="getConcert(fav.artist)">Show concerts</button>
                             <button class=" btn btn-lg btn-warning d-inline text-white mb-1 " (click)="removeFavieJSON(fav.id) ">Remove</button>
 
                         </div>
@@ -45,12 +45,12 @@
                     <!-- Tickets kopen word pas getoont als User ingelogd is -->
                     <div class="col-sm-3 align-self-center d-flex justify-content-center" *ngIf="authService.isLoggedIn">
                         <!-- Deze button toont als tickets beschikbaar zijn -->
-                        <button class="btn btn-success btn-sm " (click)="onClick(concert.offers[0].url)" *ngIf="concert.offers[0].type == typeTickets">
+                        <button class="btn btn-danger btn-sm " (click)="onClick(concert.offers[0].url)" *ngIf="concert.offers[0].type == typeTickets">
                     GET YOUR <br> TICKETS HERE
                   </button>
 
                         <!-- Deze button toont als tickets uitverkocht zijn -->
-                        <button class="btn btn-danger btn p-2" *ngIf="concert.offers[0].type == SoldOut" disabled>
+                        <button class="btn btn-secondary btn p-2 disabled"  role="button" *ngIf="concert.offers[0].type == SoldOut" aria-disabled="true">
                     SOLD OUT
                   </button>
                     </div>

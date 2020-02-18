@@ -41,6 +41,18 @@
       "accountName": "admin@eventfinder.be",
       "artist": "Sam Fender",
       "image": "https://www.theaudiodb.com/images/media/artist/thumb/syrtpq1565218848.jpg"
+    },
+    {
+      "id": 14,
+      "accountName": "admin@eventfinder.be",
+      "artist": "Tame Impala",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/tame-impala-5091d5420675e.jpg"
+    },
+    {
+      "id": 15,
+      "accountName": "admin@eventfinder.be",
+      "artist": "Tool",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/xwvtux1416173124.jpg"
     }
   ]
 }
