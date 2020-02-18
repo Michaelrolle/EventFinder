@@ -23,15 +23,20 @@
     
     .card {
         background-color: rgba(0, 0, 0, 0.603);
-        color: #ffffff !important;
+    }
+    
+    .btn-warning {
+        background-color: purple;
+        border-color: yellow;
+        color: #FBFBFB;
     }
     
     .btn-danger {
-        background-color: purple;
+        background-color: orange;
         border-color: yellow;
     }
     
-
-    .card-text, .card-title{
-        color:white;
+    .card-text,
+    .card-title {
+        color: white;
     }
