@@ -65,4 +65,9 @@ export class UserComponent implements OnInit {
     console.log(value);
   }
 
+  /* Ticket link openen in een nieuwe pagina */
+  onClick(link: string) {
+    window.open(link);
+  }
+
 }
