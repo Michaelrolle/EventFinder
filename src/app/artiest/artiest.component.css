@@ -1,7 +1,8 @@
 
 .col-sm-5{
     background-color: rgba(0, 0, 0, 0.651);
-    height: 65vh;
+    height: 70vh;
+    overflow: auto;
 }
 
 .col-sm-6{
@@ -12,15 +13,6 @@
 
 .fas, .fab{
     color: orange;
-}
-
-.table{
-    margin: auto;
-    width: auto;
-}
-
-td{
-    border: 1px solid gray;
 }
 
 body{

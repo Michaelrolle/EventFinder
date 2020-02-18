@@ -1,20 +1,62 @@
 <div class="container-fluid">
-    <div class="row text-white">
-        <div class="col-sm-5 mt-3 ml-3">
-            <div class="h3 text-center mt-3 text-center display-2 pb-4"></div>
-            <div class="row p-3"></div>
-        </div> 
-        <div *ngFor="let fav of favorieten$ | async">
-            <div *ngIf="fav.accountName == authService.user.email">
-                {{fav.accountName}}<br/>
-                {{fav.artist}} <br/>
-                <img [src]="fav.image"> <br/>
-                <button (click)="removeFavieJSON(fav.id)">Remove artist from favorites</button>
+    <div class="row">
+        <div class="col-sm-4 mt-3 ml-3">
+            <div *ngFor="let fav of favorieten$ | async" class="mt-2 text-white">
+                <div class="card">
+                    <div class="row ">
+                        <div class="col-md-3 mx-auto d-block">
+                            <img [src]="fav.image" class="w-75">
+                        </div>
+                        <div class="col-md-8 p-0">
+
+                            <h4 class="card-title">{{fav.artist}}</h4>
+                            <button class="btn btn-lg btn-danger d-inline mr-1 mb-1" (click)="getConcert(fav.artist)">Show concerts</button>
+                            <button class=" btn btn-lg btn-warning d-inline text-white mb-1 " (click)="removeFavieJSON(fav.id) ">Remove</button>
+
+                        </div>
+
+                    </div>
+                </div>
             </div>
+            <!-- <div *ngIf="fav.accountName==a uthService.user.email "> -->
+            <!-- {{fav.accountName}}<br/> -->
         </div>
-        <div class="col-sm-6 mt-3 ml-3">
-            <app-concert></app-concert>
+        <div class="col-sm-7 mt-3 ml-3 ">
+            <div class="mt-3 concerts text-white" *ngIf="showConcerts">
+                <div class="card flex-row flex-wrap mr-0 ml-3" *ngFor="let concert of concert$ | async" style="max-width: 600px">
+                    <div class="card-header col-sm-3">
+                        <!-- Genereert een image op basis van date -->
+                        <img class="card-img-top rounded" [src]="cardLink + (concert.datetime | date:'MMMM') + cardText + (concert.datetime | date:'d')" alt="Card image cap">
+                    </div>
+
+                    <!-- Card text -->
+                    <div class="card-block px-2 col-sm-6 text-center align-items-center" style="color: black">
+                        <!-- Card titel -->
+                        <h5 class="card-title mt-3 h3">
+                            {{ concert.venue.name }}
+                        </h5>
+                        <!-- Card text met plaats van venue en start uur -->
+                        <p class="card-text">
+                            {{ concert.venue.city }}, {{ concert.venue.country }}
+                            <br /> Start time: <b>{{concert.datetime | date:'H:mm'}}u</b>
+                        </p>
+                    </div>
+
+                    <!-- Tickets kopen word pas getoont als User ingelogd is -->
+                    <div class="col-sm-3 align-self-center d-flex justify-content-center" *ngIf="authService.isLoggedIn">
+                        <!-- Deze button toont als tickets beschikbaar zijn -->
+                        <button class="btn btn-danger btn-sm " (click)="onClick(concert.offers[0].url)" *ngIf="concert.offers[0].type == typeTickets">
+                    GET YOUR <br> TICKETS HERE
+                  </button>
+
+                        <!-- Deze button toont als tickets uitverkocht zijn -->
+                        <button class="btn btn-secondary btn p-2 disabled"  role="button" *ngIf="concert.offers[0].type == SoldOut" aria-disabled="true">
+                    SOLD OUT
+                  </button>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
