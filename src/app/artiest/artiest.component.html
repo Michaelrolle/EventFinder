@@ -6,10 +6,10 @@
                 <img class="rounded-circle mx-auto d-block" [attr.src]="detail[0].strArtistThumb" height="200px" width="200px" alt="artist">
             </div>
             <div class="display inline-block m-2 p-3 text-center">
-                <a [attr.href]="detail[0].strTwitter" target="_blank"><i class="fab fa-twitter m-1 fa-lg" ></i></a>
-                <a [attr.href]="detail[0].strFacebook" target="_blank"><i class="fab fa-facebook m-1 fa-lg"></i></a>
-                <a [attr.href]="detail[0].strWebsite" target="_blank"><i class="fas fa-globe m-1 fa-lg"></i></a>
-                <a [attr.href]="detail[0].strLastFMChart" target="_blank"><i class="fab fa-lastfm-square fa-lg m-1"></i></a>
+                <a [attr.href]="webLink + detail[0].strTwitter" target="_blank"><i class="fab fa-twitter m-1 fa-lg" ></i></a>
+                <a [attr.href]="webLink + detail[0].strFacebook" target="_blank"><i class="fab fa-facebook m-1 fa-lg"></i></a>
+                <a [attr.href]="webLink + detail[0].strWebsite" target="_blank"><i class="fas fa-globe m-1 fa-lg"></i></a>
+                <a *ngIf="detail[0].strLastFMChart != null" [attr.href]="webLink + detail[0].strLastFMChart" target="_blank"><i class="fab fa-lastfm-square fa-lg m-1"></i></a>
             </div>
             <div class="row p-3 text-center text-white d-block">
 
