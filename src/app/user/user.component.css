@@ -1,3 +1,7 @@
+    h4 {
+        font-family: 'Roboto Slab', serif;
+    }
+    
     .col-sm-4 {
         background-color: rgba(0, 0, 0, 0.651);
         height: 85vh;
@@ -29,11 +33,13 @@
         background-color: purple;
         border-color: yellow;
         color: #FBFBFB;
+        font-family: 'Open Sans', sans-serif;
     }
     
     .btn-danger {
         background-color: orange;
         border-color: yellow;
+        font-family: 'Open Sans', sans-serif;
     }
     
     .card-text,

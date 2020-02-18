@@ -1,38 +1,30 @@
-  <!-- Boostrap navbar -->
-
-  <nav class="navbar navbar-expand-sm navbar-default justify-content-between mb-0">
+<nav class="navbar navbar-expand-sm navbar-default justify-content-between mb-0">
     <a class="navbar-brand" routerLink="zoek"><img id="logo" src="../assets/data/logo.png"></a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
     <div class="navbar-nav middlelinks">
-      <a routerLink="about" class="nav-item nav-link">About</a>
+        <a routerLink="about" class="nav-item nav-link">About</a>
     </div>
 
     <div>
-      <a class="nav-item nav-link">
-        <button class="btn btn-warning mr-3" routerLink="user" *ngIf="authService.isLoggedIn">
+        <a class="nav-item nav-link">
+            <button class="btn btn-warning mr-3" routerLink="user" *ngIf="authService.isLoggedIn">
           My Profile
         </button>
 
-        <button class="btn btn-warning" routerLink="login"
-        *ngIf="authService.isLoggedIn == false">
+            <button class="btn btn-warning" routerLink="login" *ngIf="authService.isLoggedIn == false">
           Login
         </button>
-        <button class="btn btn-warning" routerLink="login" *ngIf="authService.isLoggedIn"
-        (click)="authService.logout()">
+            <button class="btn btn-warning" routerLink="login" *ngIf="authService.isLoggedIn" (click)="authService.logout()">
           Logout
         </button>
-      </a>
+        </a>
     </div>
-  </nav>
+</nav>
 
-  <!-- Router -->
-  
-  <div id="router" class="bg mt-0">
+<!-- Router -->
+
+<div id="router" class="bg mt-0">
     <div class="container-fluid">
-    <router-outlet></router-outlet>
-  </div>
-  </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

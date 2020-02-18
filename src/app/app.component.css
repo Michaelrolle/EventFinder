@@ -1,38 +1,40 @@
-  .bg {
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab&display=swap');
+.bg {
     background-image: url("https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
     height: 90%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
 
-.navbar-expand-sm{
+.navbar-expand-sm {
     background-color: black;
 }
 
-a{
-  color:white;
+a {
+    color: white;
 }
 
-.btn-warning{
-  background-color: #631D76;
-  color: #FBFBFB;
-  padding-left: 30px;
-  padding-right: 30px;
+.btn-warning {
+    background-color: #631D76;
+    color: #FBFBFB;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Open Sans', sans-serif;
 }
 
-nav{
-  border-bottom: 2px solid orange;
+nav {
+    border-bottom: 2px solid orange;
 }
 
 a:hover {
-  color: orange;
+    color: orange;
 }
 
 #logo {
-  width: 12%
+    width: 12%
 }
 
 .middlelinks {
-  font-size: 20px;
+    font-size: 20px;
 }
