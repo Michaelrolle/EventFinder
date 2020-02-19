@@ -1,25 +1,26 @@
-.concerts{
+.concerts {
     overflow-y: scroll;
     max-height: 80vh;
 }
 
-
-.card{
-    border:none;
+.card {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.603);
 }
 
-.card-header{
-    background-color: rgb(32, 30, 30);
-}
-
-img{
+img {
     border: 2px solid purple;
 }
 
-.btn-success{
+.btn-success {
     background-color: purple;
 }
 
 a {
     color: orange;
+}
+
+.card-text,
+.card-title {
+    color: white;
 }

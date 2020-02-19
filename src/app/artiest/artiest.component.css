@@ -15,6 +15,14 @@
     color: orange;
 }
 
+.display-2 {
+    font-family: 'Roboto Slab', serif;
+}
+
 body {
     background-color: black;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
 }
