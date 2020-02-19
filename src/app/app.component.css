@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab&display=swap');
 .bg {
     background-image: url("https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    height: 90%;
+    height: 85%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

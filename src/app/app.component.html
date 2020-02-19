@@ -1,10 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-default justify-content-between mb-0">
     <a class="navbar-brand" routerLink="zoek"><img id="logo" src="../assets/data/logo.png"></a>
 
-    <div class="navbar-nav middlelinks">
-        <a routerLink="about" class="nav-item nav-link">About</a>
-    </div>
-
     <div>
         <a class="nav-item nav-link">
             <button class="btn btn-warning mr-3" routerLink="user" *ngIf="authService.isLoggedIn">
@@ -27,4 +23,12 @@
     <div class="container-fluid">
         <router-outlet></router-outlet>
     </div>
+
 </div>
+<footer class="page-footer font-small">
+
+    <div class="footer-copyright text-center py-3 ">© 2020 Copyright:
+        <a routerLink="about">About</a>
+    </div>
+
+</footer>
